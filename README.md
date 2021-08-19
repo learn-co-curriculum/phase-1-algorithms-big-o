@@ -201,7 +201,8 @@ consideration: space complexity (how much memory our function will use).
 
 Just like with time complexity, we measure space complexity _relative to the
 size of the input_: for an input that takes up `n` memory, how much memory will
-our algorithm use?
+our algorithm use? In particular we need to consider what auxiliary (additional)
+space is taken up for new data structures when our algorithm runs.
 
 Let's break down a couple algorithms to see some examples:
 
@@ -214,7 +215,7 @@ function reverseString(word) {
 }
 ```
 
-In this case, we need to allocate memory for:
+In this case, we need to allocate memory for these auxiliary pieces of data:
 
 - an array `wordArray` that will grow in size linearly with the input
 - an array `reversedWordArray` that will grow in size linearly with the input
