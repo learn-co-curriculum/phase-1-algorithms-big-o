@@ -135,9 +135,8 @@ function average(array) {
   // 1 step
   let total = 0;
 
-  // n steps (dependent on the size of the array)
   for (const num of array) {
-    // 1 step
+    // n steps (dependent on the size of the array)
     total += num;
   }
 
@@ -146,7 +145,7 @@ function average(array) {
 }
 ```
 
-This gives us a runtime of `O(n + 3)`. We can remove the constant (`+ 3`)
+This gives us a runtime of `O(n + 2)`. We can remove the constants (`+ 2`)
 because we're just looking for a high-level summary, so we end up with `O(n)`.
 
 What if we use the `reduce` method instead of a `for...of` loop?
@@ -181,15 +180,14 @@ function containsAverage(array) {
   // n steps (depending on the size of the array)
   const averageValue = average(array);
 
-  // n steps (depending on the size of the array)
   for (const num of array) {
-    // 1 step
+    // n steps (depending on the size of the array)
     if (num === averageValue) return true;
   }
 }
 ```
 
-Counting the steps here, we end up with `O(2n + 1)`. Even though it takes twice
+Counting the steps here, we end up with `O(n * 2)`. Even though it takes twice
 as long as our first algorithm, we can still remove the constants and end up
 with `O(n)`. Since we're looking for a high-level summary, this approximation
 still gives us a good sense as to how well our algorithm will scale to larger
