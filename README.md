@@ -126,7 +126,7 @@ function average(array) {
 To determine the time complexity of any algorithm, all we need to do is:
 
 - Count the number of steps the computer will take to run our code
-- Remove any constants
+- Remove any constants (more on this shortly!)
 
 Let's start by counting the steps:
 
@@ -201,8 +201,9 @@ consideration: space complexity (how much memory our function will use).
 
 Just like with time complexity, we measure space complexity _relative to the
 size of the input_: for an input that takes up `n` memory, how much memory will
-our algorithm use? In particular we need to consider what auxiliary (additional)
-space is taken up for new data structures when our algorithm runs.
+our algorithm use? In addition to the amount of memory needed for our inputs, we
+need to consider what auxiliary (additional) space is taken up for new data
+structures when our algorithm runs.
 
 Let's break down a couple algorithms to see some examples:
 
@@ -215,40 +216,38 @@ function reverseString(word) {
 }
 ```
 
-In this case, we need to allocate memory for these auxiliary pieces of data:
+In this case, we need to allocate memory for the input `word`, as well as these
+auxiliary pieces of data:
 
 - an array `wordArray` that will grow in size linearly with the input
 - an array `reversedWordArray` that will grow in size linearly with the input
 - a string `reversedWord` that will grow in size linearly with the input
 
-Putting that together, we end up with `O(3n)` space complexity, which we can
-simplify as `O(n)` after dropping the constant.
+Putting that together, we end up with `O(4n)` space complexity: for an input
+string of length `n`, we also need to declare two arrays of length `n` and
+another string of length `n`. We can simplify as `O(n)` after dropping the
+constant.
 
 In general, space complexity can be a bit more difficult to calculate than time
 complexity because it can vary between different programming languages and
 environments, depending on how they allocate memory under the hood; so again,
 keeping a high-level summary is more important than trying to be too precise.
 
-For a function that simply iterates over an array, like our `average` function:
+For a function that simply adds two numbers together:
 
 ```js
-function average(array) {
-  let total = 0;
-  for (const num of array) {
-    total += num;
-  }
-  return total / array.length;
+function sum(num1, num2) {
+  return num1 + num2;
 }
 ```
 
-We only allocate memory for:
+We only allocate memory for the inputs and the return value:
 
-- A number `total`
-- A number `num` to represent each element of the array
+- A number `num1`
+- A number `num2`
+- A number (the return value)
 
-The number of elements in our input array doesn't impact the amount of memory
-used for these variables: we still only need to store two data points at a time,
-so the Big O for space complexity here would be `O(1)`.
+In this case, we can summarize the time complexity as constant: `O(1)`.
 
 In many cases, you can improve an algorithm's space complexity by sacrificing
 its time complexity, and vice-versa; navigating these tradeoffs is one of the
@@ -264,8 +263,8 @@ To recap:
   the number of steps the computer will take to run our code and then remove any
   constants (so `O(2n + 1)` becomes just `O(n)`).
 - To calculate the space complexity of an algorithm using Big O notation, check
-  what variables are needed to store data in memory, and also remove any
-  constants.
+  what memory is needed for the inputs as well as any auxiliary data structures
+  (and also remove any constants).
 
 In the next lesson, we'll look at some other examples of algorithms that use
 other common Big O formulas.
