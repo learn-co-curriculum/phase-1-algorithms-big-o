@@ -73,25 +73,25 @@ to run) step by step:
 - The `for...of` block will iterate over every element in the `laundry` array.
 - On the first iteration, the first element, `"shirt"` is assigned to the
   variable `item`.
-- The `if` statement checks: is the `item` a string `"sock"`? Nope! We continue
+- The `if` statement checks: is the `item` a `"sock"`? Nope! We continue
   iterating.
 - On the second iteration, the second element, `"shorts"` is assigned to the
-  variable `item`
-- The `if` statement checks: is the `item` a string `"sock"`? Nope! We continue
+  variable `item`.
+- The `if` statement checks: is the `item` a `"sock"`? Nope! We continue
   iterating.
 - On the third iteration, the third element, `"sock"` is assigned to the
   variable `item`.
-- The `if` statement checks: is the `item` a string `"sock"`? Yep! We stop
-  iterating and return from the function.
+- The `if` statement checks: is the `item` a `"sock"`? Yep! We stop iterating
+  and return from the function.
 
 What happens if our sock is the last element of the array? Or what if the sock
 isn't in the array at all?
 
 If `laundry` is an unsorted array of strings, the **worst case** scenario for
-our algorithm is that it will have to iterate over every item in the array.
-Whether it might find the element on the first try, or on the third try, or
-sometimes not at all is not important; in regards to Big O, developers simply
-care about describing the algorithm from the highest, most abstract level.
+our algorithm is that it will have to iterate over every item in the array. In
+regards to Big O, whether it might find the element on the first try, or on the
+third try, or sometimes not at all is not important; developers simply care
+about describing the algorithm from the highest, most abstract level.
 
 Besides the size of the input, the other factor that will determine how long our
 algorithm will take to find a sock is how powerful the computer is that is
@@ -195,7 +195,7 @@ and larger inputs when compared to some other common Big O runtimes.
 
 ## Space Complexity With Big O
 
-We've spent a some time discussing how to calculate time complexity (how long
+We've spent some time discussing how to calculate time complexity (how long
 our function will take to run) using Big O notation, but there's another
 consideration: space complexity (how much memory our function will use).
 
@@ -267,8 +267,8 @@ To recap:
   what variables are needed to store data in memory, and also remove any
   constants.
 
-In the next lesson, we'll look at some other examples of algorithms that use a
-few more common Big O formulas.
+In the next lesson, we'll look at some other examples of algorithms that use
+other common Big O formulas.
 
 ## Resources
 
