@@ -247,7 +247,7 @@ We only allocate memory for the inputs and the return value:
 - A number `num2`
 - A number (the return value)
 
-In this case, we can summarize the time complexity as constant: `O(1)`.
+In this case, we can summarize the space complexity as constant: `O(1)`.
 
 In many cases, you can improve an algorithm's space complexity by sacrificing
 its time complexity, and vice-versa; navigating these tradeoffs is one of the
